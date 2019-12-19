@@ -54,7 +54,7 @@ brew cask install xquartz
 brew install caskformula/caskformula/inkscape
 
 
-##------------- Atom, Packages, Theme & Keybindings
+##------------- Atom, Packages & Keybindings
 # Appplication
 brew cask install atom
 
@@ -64,3 +64,16 @@ apm install --packages-file packages/atom_packages.txt
 # Keybindings
 echo "'atom-workspace atom-text-editor:not([mini])':
   'cmd-enter': 'r-exec:send-command' `# r execution keybind`
+
+
+##------------- R & Pacakges
+# Application
+brew install r
+
+# CRAN packages
+Rscript -e "
+pkgNames = read.table('packages/R_CRAN_packages.txt')[, 1];
+install.packages(pkgNames, repos='http://cran.us.r-project.org', dependencies = TRUE, type = 'source');
+"
+
+

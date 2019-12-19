@@ -1,0 +1,7 @@
+"colorblindr/clauswilke"
+"colorout/jalvesaq"
+"emayili/datawookie"
+"icon/ropenscilabs"
+"qcbsRworkshops/QCBSRworkshops"
+"redoc/noamross"
+"STManaged/willvieira"
