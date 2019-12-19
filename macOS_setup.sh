@@ -33,6 +33,7 @@ brew install youtube-dl
 brew install wget
 brew cask flux
 brew cask color-oracle
+brew cask writefull
 
 
 ##------------- Communications app
@@ -118,5 +119,17 @@ attach(.env, warn.conflicts = FALSE)
 ### DEFAULT WORKING DIRECTORY -------------------
 
 # setwd("~/Desktop")' > ~/.Rprofile
+
+
+##------------- Pyhton
+brew install python3
+
+
+##------------- Pandoc and Pandoc's filters
+brew install pandoc
+brew install pandoc-citeproc
+pip install pandoc-fignos
+pip install pandoc-tablenos
+pip install pandoc-eqnos
 
 
