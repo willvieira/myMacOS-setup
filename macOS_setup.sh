@@ -66,7 +66,7 @@ echo "'atom-workspace atom-text-editor:not([mini])':
   'cmd-enter': 'r-exec:send-command' `# r execution keybind`
 
 
-##------------- R & Pacakges
+##------------- R, Pacakges & Profile
 # Application
 brew install r
 
@@ -75,5 +75,48 @@ Rscript -e "
 pkgNames = read.table('packages/R_CRAN_packages.txt')[, 1];
 install.packages(pkgNames, repos='http://cran.us.r-project.org', dependencies = TRUE, type = 'source');
 "
+
+# Profile
+echo 'options(warnPartialMatchArgs = TRUE, warnPartialMatchDollar = TRUE, warnPartialMatchAttr = TRUE)
+
+### GENERAL OPTIONS -----------------------------
+
+options(
+  prompt          = "> ",
+  continue        = "+ ",
+  width           = 80,
+  scipen          = 100,
+  warn            = 0,
+  editor          = "Atom",
+  stringsAsFactor = TRUE,
+  tab.width       = 2
+)
+
+### GRAPHICAL DEVICE DIMENSIONS -----------------
+
+grDevices::quartz.options(
+  width  = 6,
+  height = 5
+)
+
+### CRAN MIRROR ---------------------------------
+
+local({
+  r <- getOption("repos")
+  r["CRAN"] <- "http://cran.rstudio.com/"
+  options(repos = r)
+})
+
+### QUIT R WITHOUT SAVING -----------------------
+
+.env <- new.env()
+.env$q <- function(save = "no", ...) {
+  quit(save = save, ...)
+}
+attach(.env, warn.conflicts = FALSE)
+
+### DEFAULT WORKING DIRECTORY -------------------
+
+# setwd("~/Desktop")' > ~/.Rprofile
 
 
