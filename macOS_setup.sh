@@ -54,3 +54,13 @@ brew cask install xquartz
 brew install caskformula/caskformula/inkscape
 
 
+##------------- Atom, Packages, Theme & Keybindings
+# Appplication
+brew cask install atom
+
+# Packages
+apm install --packages-file packages/atom_packages.txt
+
+# Keybindings
+echo "'atom-workspace atom-text-editor:not([mini])':
+  'cmd-enter': 'r-exec:send-command' `# r execution keybind`
