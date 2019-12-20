@@ -35,7 +35,7 @@ sudo -v # ask for sudo upfront
 
   brew cask install adobe-acrobat-reader
   brew cask install google-chrome
-  brave-browser brave-browser
+  brew cask brave-browser
   brew install graphicsmagick
   brew install imagemagick
   brew install ffmpeg
