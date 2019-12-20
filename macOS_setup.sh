@@ -114,6 +114,8 @@ sudo -v # ask for sudo upfront
   Rscript -e "
   pkgNames = read.table('packages/R_CRAN_packages.txt')[, 1];
   install.packages(pkgNames, repos='http://cran.us.r-project.org', dependencies = TRUE, type = 'source');
+  pkgNames = read.table('packages/R_github_packages.txt')[, 1];
+  devtools::install_github(pkgNames, upgrade = 'always');
   "
 
   # Profile
