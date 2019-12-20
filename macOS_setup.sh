@@ -52,6 +52,8 @@ sudo -v # ask for sudo upfront
 
 ##
 
+
+
 ##------------- Communications app
 
   brew cask install skype
@@ -74,13 +76,21 @@ sudo -v # ask for sudo upfront
   brew cask install dropbox
   brew cask install owncloud
 
+##
 
-  ##------------- Image editor
+
+
+##------------- Image editor
+
   brew cask install xquartz
   brew install caskformula/caskformula/inkscape
 
+##
 
-  ##------------- Atom, Packages & Keybindings
+
+
+##------------- Atom, Packages & Keybindings
+
   # Appplication
   brew cask install atom
 
