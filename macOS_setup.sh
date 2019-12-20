@@ -258,16 +258,22 @@ sudo -v # ask for sudo upfront
 
 
 
-## VPN Client
+## Remotes
 
-  # Application
+  # VPN openconnect
   brew install openconnect
 
   # start and close VPN connection
   #sudo openconnect -b -q rpv.usherbrooke.ca -u view2301 --passwd-on-stdin < ~/.passfile
   #sudo kill $(ps aux | grep openconnect | grep -v grep | awk '{print $2}')
 
+  # sshpass
+   brew install http://git.io/sshpass.rb
+
 ##
+
+
+
 ##------------- Reboot
 
   sudo reboot
