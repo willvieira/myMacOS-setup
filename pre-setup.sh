@@ -30,7 +30,7 @@ mkdir packages
   # which are github?
   isGithub = sapply(allPackages, function(x) {!is.null(packageDescription(x)['GithubRepo'][[1]])});
   # get userName and package Name together
-  gh_pkgs = sapply(allPackages[isGithub], function(x) paste0(packageDescription(x)['GithubRepo'][[1]], '/', packageDescription(x)['GithubUsername'][[1]]));
+  gh_pkgs = sapply(allPackages[isGithub], function(x) paste0(packageDescription(x)['GithubUsername'][[1]], '/', packageDescription(x)['GithubRepo'][[1]]));
   # save CRAN pacakges
   write.table(allPackages[!isGithub], file = 'packages/R_CRAN_packages.txt', row.names = FALSE, col.names = FALSE);
   # save github packages;
