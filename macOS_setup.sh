@@ -185,3 +185,37 @@ sudo -v # ask for sudo upfront
 
 
 
+##------------- Install and setup Git, Github & GithLab
+
+  brew install git
+  git config --global color.diff auto
+  git config --global color.status auto
+  git config --global color.branch auto
+  git config --global user.name \"$FIRSTNAME $LASTNAME\"
+  git config --global user.email \"$EMAIL\"
+  git config --global github.user \"$GITHUB\"
+  git config --global credential.helper osxkeychain  # save my credentials
+  ssh-keygen -t rsa -b 4096 -C \"$EMAIL\"
+
+
+  # Download github and gitlab repos
+  # github
+  mkdir ~/GitHub
+  cd ../GitHub
+  for REPO in "${GITHUB_REPOS[@]}"
+  do
+    git clone https://github.com/$REPO.git
+  done
+  cd ..
+
+  # gitlab
+  mkdir ~/GitLab
+  cd GitLab
+  for REPO in "${GITLAB_REPOS[@]}"
+  do
+    echo git clone git@$GITLAB:$REPO.git
+  done
+  cd ..
+##
+
+

@@ -1,0 +1,20 @@
+# Oldschool alert here: no space to assign variables!
+
+FIRSTNAME="Willian"
+LASTNAME="Vieira"
+EMAIL="willian.vieira@usherbrooke.ca"
+GITHUB="willvieira"
+GITLAB="depot.ielab.usherbrooke.ca"
+
+
+## github repos to download
+# follow the Username/repoName
+GITHUB_REPOS=("willvieira/forest-IPM"
+              "willvieira/ms_STM-managed"
+              "willvieira/STManaged"
+              "willvieira/shiny_STM-managed"
+              "TheoreticalEcosystemEcology/jekyll_ieLab"
+)
+
+# gitlab repos to download
+GITLAB_REPOS=("thesis_dev/thesis_will")
