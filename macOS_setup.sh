@@ -35,7 +35,7 @@ sudo -v # ask for sudo upfront
 
   brew cask install adobe-acrobat-reader
   brew cask install google-chrome
-  brew cask brave-browser
+  brew cask install brave-browser
   brew install graphicsmagick
   brew install imagemagick
   brew install ffmpeg
@@ -45,11 +45,11 @@ sudo -v # ask for sudo upfront
   brew cask install vlc
   brew install youtube-dl
   brew install wget
-  brew cask flux
-  brew cask color-oracle
-  brew cask writefull
-  brew cask typora
-  brew cask docker
+  brew cask install flux
+  brew cask install color-oracle
+  brew cask install writefull
+  brew cask install typora
+  brew cask install docker
 
 ##
 
@@ -268,7 +268,10 @@ sudo -v # ask for sudo upfront
   #sudo kill $(ps aux | grep openconnect | grep -v grep | awk '{print $2}')
 
   # sshpass
-   brew install http://git.io/sshpass.rb
+  brew install http://git.io/sshpass.rb
+
+##
+
 
 ##
 
