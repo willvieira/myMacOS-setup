@@ -219,3 +219,46 @@ sudo -v # ask for sudo upfront
 ##
 
 
+
+##------------- Install jekyll
+
+  sudo gem install jekyll jekyll-language-plugin
+
+##
+
+
+
+##------------- Emulator
+
+  brew install wine
+  winetricks directplay # so we can play AOEII avec les copains
+
+##
+
+
+
+##------------- Terminal
+
+  # Application
+  brew cask install iterm2
+
+  # Oh My Zsh #TODO
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  # ~/.zshrc ZSH_THEME="agnoster" # define theme
+  git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions # autosuggestions
+  # ~/.zshrc plugins=(zsh-autosuggestions)
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting # syntax-highlighting
+  # plugins=( [plugins...] zsh-syntax-highlighting)
+
+  # install Source Code Pro font
+  brew cask install font-source-code-pro
+
+##
+
+
+
+##------------- Reboot
+
+  sudo reboot
+
+##
