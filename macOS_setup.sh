@@ -294,13 +294,22 @@ source .personal_info
 
 
 
+## Caato time tracker
+
+  brew install mas
+  mas install 596816253
+
+##
+
+
+
 ## Remotes
 
   # VPN openconnect
   brew install openconnect
 
   # start and close VPN connection
-  #sudo openconnect -b -q rpv.usherbrooke.ca -u view2301 --passwd-on-stdin < ~/bin/pass/.passfile
+  #sudo openconnect -b -q $SERVER -u $USER --passwd-on-stdin < ~/bin/pass/.passfile
   #sudo kill $(ps aux | grep openconnect | grep -v grep | awk '{print $2}')
 
   # sshpass

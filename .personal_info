@@ -2,9 +2,13 @@
 
 FIRSTNAME="Willian"
 LASTNAME="Vieira"
+# Git
 EMAIL="willian.vieira@usherbrooke.ca"
 GITHUB="willvieira"
 GITLAB="depot.ielab.usherbrooke.ca"
+# VPN
+USER="view2301"
+SERVER="rpv.usherbrooke.ca"
 
 
 ## github repos to download
