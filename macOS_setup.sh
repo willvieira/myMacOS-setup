@@ -237,7 +237,7 @@ source .personal_info
 
 ##------------- Emulator
 
-  brew install wine
+  brew cask install wine-stable
   winetricks directplay # so we can play AOEII avec les copains
 
 ##
