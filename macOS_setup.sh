@@ -258,6 +258,40 @@ sudo -v # ask for sudo upfront
 
 
 
+## Activity watch
+
+  # Application
+  brew cask install activitywatch
+
+  # bash script to open activity watch
+  mkdir ~/bin/scripts
+  echo "#!/bin/bash
+
+/usr/local/bin/aw-qt" > ~/bin/scripts/launchActivitywatch.sh
+
+  # launchctl daemon to launch activitywatch with system login
+  echo '<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+   <key>Label</key>
+   <string>com.activitywatch</string>
+   <key>ProgramArguments</key>
+   <array><string>/Users/wvieira/bin/scripts/launchActivitywatch.sh</string></array>
+   <key>RunAtLoad</key>
+   <true/>
+</dict>
+</plist>' > ~/Library/LaunchAgents/com.activitywatch.plist
+
+  launchctl load ~/Library/LaunchAgents/com.activitywatch.plist
+
+  # add the chromium extension
+  open -a 'Brave Browser' https://chrome.google.com/webstore/detail/activitywatch-web-watcher/nglaklhklhcoonedhgnpgddginnjdadi
+
+##
+
+
+
 ## Remotes
 
   # VPN openconnect
