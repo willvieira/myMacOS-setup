@@ -51,6 +51,7 @@ source .personal_info
   brew cask install writefull
   brew cask install typora
   brew cask install docker
+  brew install nano
 
 ##
 
