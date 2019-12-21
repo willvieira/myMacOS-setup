@@ -18,3 +18,8 @@ GITHUB_REPOS=("willvieira/forest-IPM"
 
 # gitlab repos to download
 GITLAB_REPOS=("thesis_dev/thesis_will")
+
+
+# If you want to save your passwords to be passed sshpass, define it here
+serverCanPASS=""
+serverLabPASS=""

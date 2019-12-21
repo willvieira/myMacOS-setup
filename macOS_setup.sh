@@ -1,6 +1,7 @@
 #!/bin/bash
 
 sudo -v # ask for sudo upfront
+source .personal_info
 
 
 ##------------- Install XCode Command Line Tools
@@ -197,6 +198,7 @@ sudo -v # ask for sudo upfront
   git config --global github.user \"$GITHUB\"
   git config --global credential.helper osxkeychain  # save my credentials
   ssh-keygen -t rsa -b 4096 -C \"$EMAIL\"
+  cat ~/.ssh/id_rsa.pub > ~/Desktop/gitlab_key.txt
 
 
   # Download github and gitlab repos
@@ -298,13 +300,26 @@ sudo -v # ask for sudo upfront
   brew install openconnect
 
   # start and close VPN connection
-  #sudo openconnect -b -q rpv.usherbrooke.ca -u view2301 --passwd-on-stdin < ~/.passfile
+  #sudo openconnect -b -q rpv.usherbrooke.ca -u view2301 --passwd-on-stdin < ~/bin/pass/.passfile
   #sudo kill $(ps aux | grep openconnect | grep -v grep | awk '{print $2}')
 
   # sshpass
   brew install http://git.io/sshpass.rb
 
 ##
+
+
+
+## Passwords to be used with alias
+
+
+
+##
+
+
+
+
+## Alias
 
 
 ##
