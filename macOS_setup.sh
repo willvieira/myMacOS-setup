@@ -52,6 +52,9 @@ source .personal_info
   brew cask install typora
   brew cask install docker
   brew install nano
+  brew cask install basictex # tlmgr to install further packages
+  brew cask install spectacle
+  brew install octave
 
 ##
 
