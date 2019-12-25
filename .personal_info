@@ -7,8 +7,8 @@ EMAIL="willian.vieira@usherbrooke.ca"
 GITHUB="willvieira"
 GITLAB="depot.ielab.usherbrooke.ca"
 # VPN
-USER="view2301"
-SERVER="rpv.usherbrooke.ca"
+VPNUSER="view2301"
+VPNSERVER="rpv.usherbrooke.ca"
 
 
 ## github repos to download

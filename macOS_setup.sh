@@ -319,7 +319,7 @@ source .personal_info
   brew install openconnect
 
   # start and close VPN connection
-  #sudo openconnect -b -q $SERVER -u $USER --passwd-on-stdin < ~/bin/pass/.passfile
+  #sudo openconnect -b -q $VPNSERVER -u VPN$USER --passwd-on-stdin < ~/bin/pass/.passfile
   #sudo kill $(ps aux | grep openconnect | grep -v grep | awk '{print $2}')
 
   # sshpass
