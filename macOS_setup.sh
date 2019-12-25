@@ -276,8 +276,17 @@ source .personal_info
 
   launchctl load ~/Library/LaunchAgents/com.activitywatch.plist
 
-  # add the chromium extension
+##
+
+
+
+## Brave (chromium) extensions
+
+  # activititywatch
   open -a 'Brave Browser' https://chrome.google.com/webstore/detail/activitywatch-web-watcher/nglaklhklhcoonedhgnpgddginnjdadi
+
+  # reader view
+  open -a 'Brave Browser' https://chrome.google.com/webstore/detail/reader-view/iibolhpkjjmoepndefdmdlmbpfhlgjpl
 
 ##
 
