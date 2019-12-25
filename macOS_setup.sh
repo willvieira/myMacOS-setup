@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 sudo -v # ask for sudo upfront
 source .personal_info
@@ -51,7 +51,7 @@ source .personal_info
 
 ##------------- Reference manager
 
-  brew cask install mendeley
+  mendeley mendeley-desktop
 
 ##
 
@@ -70,6 +70,7 @@ source .personal_info
 
   brew cask install xquartz
   brew install caskformula/caskformula/inkscape
+  - brew cask install gimp
 
 ##
 
@@ -94,7 +95,7 @@ source .personal_info
 ##------------- R, Pacakges & Profile
 
   # Application
-  brew install r
+  brew install R
 
   # CRAN packages
   Rscript -e "
@@ -256,10 +257,8 @@ source .personal_info
   brew cask install activitywatch
 
   # bash script to open activity watch
-  mkdir ~/bin/scripts
-  echo "#!/bin/bash
-
-/usr/local/bin/aw-qt" > ~/bin/scripts/launchActivitywatch.sh
+  mkdir ~/scripts
+  echo "#\!/bin/sh\n\n/usr/local/bin/aw-qt" > ~/scripts/launchActivitywatch.sh
 
   # launchctl daemon to launch activitywatch with system login
   echo '<?xml version="1.0" encoding="UTF-8"?>
@@ -269,7 +268,7 @@ source .personal_info
    <key>Label</key>
    <string>com.activitywatch</string>
    <key>ProgramArguments</key>
-   <array><string>/Users/wvieira/bin/scripts/launchActivitywatch.sh</string></array>
+   <array><string>~/scripts/launchActivitywatch.sh</string></array>
    <key>RunAtLoad</key>
    <true/>
 </dict>
