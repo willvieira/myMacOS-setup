@@ -16,7 +16,6 @@ source .personal_info
 ##------------- Utilitaries
 
   brew cask install adobe-acrobat-reader
-  brew cask install google-chrome
   brew cask install brave-browser
   brew install graphicsmagick
   brew install imagemagick
