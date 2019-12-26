@@ -87,7 +87,10 @@ source .personal_info
 
   # Keybindings
   echo "'atom-workspace atom-text-editor:not([mini])':
-    'cmd-enter': 'r-exec:send-command' `# r execution keybind`
+    'cmd-enter': 'r-exec:send-command'" >> ~/.atom/keymap.cson
+
+  # define iTerm2 as the app to send code and focusWindow to FALSE
+  echo "atom.config.set('r-exec.whichApp', 'iTerm2')\natom.config.set('r-exec.focusWindow', false)" >> ~/.atom/init.coffee
 
   # Fix language-r snippet
   curl -L 'https://raw.githubusercontent.com/REditorSupport/atom-language-r/master/snippets/language-r.cson' > ~/.atom/packages/language-r/snippets/language-r.cson
