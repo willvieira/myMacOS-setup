@@ -22,7 +22,6 @@ source .personal_info
   brew install ffmpeg
   brew install hugo
   brew install node
-  brew cask install transmission
   brew cask install vlc
   brew install youtube-dl
   brew install wget
