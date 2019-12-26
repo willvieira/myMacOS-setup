@@ -260,25 +260,27 @@ source .personal_info
 ## Activity watch
 
   # Application
-  brew cask install activitywatch
+  curl -LO https://github.com/ActivityWatch/activitywatch/releases/download/v0.8.4/activitywatch-v0.8.4-macos-x86_64.zip
+  unzip activitywatch-v0.8.4-macos-x86_64.zip -d /Applications/
+  rm activitywatch-v0.8.4-macos-x86_64.zip
 
   # bash script to open activity watch
   mkdir ~/scripts
-  echo "#\!/bin/sh\n\n/usr/local/bin/aw-qt" > ~/scripts/launchActivitywatch.sh
+  echo "#\!/bin/sh\n\ncd /Applications/activitywatch\n./aw-qt" > ~/scripts/launchActivitywatch.sh
 
   # launchctl daemon to launch activitywatch with system login
-  echo '<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
+  echo "<?xml version='1.0' encoding='UTF-8'?>
+  <!DOCTYPE plist PUBLIC ''-//Apple Computer//DTD PLIST 1.0//EN' 'http://www.apple.com/DTDs/PropertyList-1.0.dtd'>
+  <plist version='1.0'>
+  <dict>
    <key>Label</key>
    <string>com.activitywatch</string>
    <key>ProgramArguments</key>
-   <array><string>~/scripts/launchActivitywatch.sh</string></array>
+   <array><string>/Users/$USERNAME/scripts/launchActivitywatch.sh</string></array>
    <key>RunAtLoad</key>
    <true/>
-</dict>
-</plist>' > ~/Library/LaunchAgents/com.activitywatch.plist
+  </dict>
+  </plist>" > ~/Library/LaunchAgents/com.activitywatch.plist
 
   launchctl load ~/Library/LaunchAgents/com.activitywatch.plist
 
