@@ -88,6 +88,9 @@ source .personal_info
   echo "'atom-workspace atom-text-editor:not([mini])':
     'cmd-enter': 'r-exec:send-command' `# r execution keybind`
 
+  # Fix language-r snippet
+  curl -L 'https://raw.githubusercontent.com/REditorSupport/atom-language-r/master/snippets/language-r.cson' > ~/.atom/packages/language-r/snippets/language-r.cson
+
 ##
 
 
