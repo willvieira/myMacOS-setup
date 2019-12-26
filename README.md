@@ -40,6 +40,7 @@ Install:
 - LaTeX
 - spectacle
 - octave
+- my TouchBar My rules
 - skype
 - rambox
 - mendeley

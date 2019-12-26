@@ -35,6 +35,7 @@ source .personal_info
   brew cask install basictex # tlmgr to install further packages
   brew cask install spectacle
   brew install octave
+  brew cask install mtmr
 
 ##
 
@@ -70,7 +71,7 @@ source .personal_info
 
   brew cask install xquartz
   brew install caskformula/caskformula/inkscape
-  - brew cask install gimp
+  brew cask install gimp
 
 ##
 
