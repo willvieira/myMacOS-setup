@@ -18,7 +18,7 @@ source .personal_info
   brew cask install adobe-acrobat-reader
   brew cask install brave-browser
   brew install graphicsmagick
-  brew install imagemagick
+  brew install imagemagick@6
   brew install ffmpeg
   brew install hugo
   brew install node
@@ -69,7 +69,7 @@ source .personal_info
 ##------------- Image editor
 
   brew cask install xquartz
-  brew install caskformula/caskformula/inkscape
+  brew cask install inkscape
   brew cask install gimp
 
 ##
@@ -320,16 +320,6 @@ source .personal_info
   open -a 'Brave Browser' https://chrome.google.com/webstore/detail/reader-view/iibolhpkjjmoepndefdmdlmbpfhlgjpl
 
 ##
-
-
-
-## Caato time tracker
-
-  brew install mas
-  mas install 596816253
-
-##
-
 
 
 ## Remotes
