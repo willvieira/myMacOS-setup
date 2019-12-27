@@ -106,7 +106,7 @@ source .personal_info
   # CRAN packages
   Rscript -e "
   pkgNames = read.table('packages/R_CRAN_packages.txt')[, 1];
-  install.packages(pkgNames, repos='http://cran.us.r-project.org', dependencies = TRUE, type = 'source');
+  install.packages(pkgNames, repos='http://cran.us.r-project.org', dependencies = TRUE, type = 'source', quiet = TRUE);
   pkgNames = read.table('packages/R_github_packages.txt')[, 1];
   devtools::install_github(pkgNames, upgrade = 'always');
   "
@@ -153,6 +153,16 @@ source .personal_info
   ### DEFAULT WORKING DIRECTORY -------------------
 
   # setwd("~/Desktop")' > ~/.Rprofile
+
+##
+
+
+
+## Libraries
+
+  brew install udunits
+  brew install gdal
+  brew install gdal2 --with-armadillo --with-complete --with-libkml --with-unsupported
 
 ##
 
