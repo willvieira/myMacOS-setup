@@ -337,10 +337,6 @@ source .personal_info
   # VPN openconnect
   brew install openconnect
 
-  # start and close VPN connection
-  #sudo openconnect -b -q $VPNSERVER -u VPN$USER --passwd-on-stdin < ~/bin/pass/.passfile
-  #sudo kill $(ps aux | grep openconnect | grep -v grep | awk '{print $2}')
-
   # sshpass
   brew install http://git.io/sshpass.rb
 
@@ -350,14 +346,80 @@ source .personal_info
 
 ## Passwords to be used with alias
 
+  # save passwords
+  mkdir -p $directoryToSave
 
+  for MYPASS in "${MYPASSWORDS[@]}"
+  do
+    PASS=`echo "$MYPASS" | sed 's/.*;//'`
+    DIRECT=`echo $directoryToSave/$MYPASS | sed 's/;.*//'`
+    echo "$PASS" > $DIRECT
+  done
 
 ##
 
 
 
+## Bash functions
+
+  # create file to save functions
+  echo "#!/bin/sh \
+  \
+  " > $HOME/scripts/bashFunctions.sh
+
+  # Add functions
+  DIRECT=`echo $directoryToSave/${MYPASSWORDS[0]} | sed 's/;.*//'`
+
+  # push files to server
+  echo "
+mammPush() {
+  sshpass -f $DIRECT scp -r $HOME/GitHub/\$1 view2301@mp2b.computecanada.ca:/home/view2301/\$2
+}
+  " >> $HOME/scripts/bashFunctions.sh
+
+  # pull files from server
+  echo "
+mammPull() {
+  sshpass -f $DIRECT scp -r view2301@mp2b.computecanada.ca:/home/view2301/\$2 $HOME/GitHub/\$2
+}
+  " >> $HOME/scripts/bashFunctions.sh
+
+  # close VPN
+  echo "
+closeVPN() {
+  sudo kill \$(ps aux | grep openconnect | grep -v grep | awk '{print \$2}')
+}
+  " >> $HOME/scripts/bashFunctions.sh
+
+  # Export functions
+  sed -i "" "79i\\
+  source $HOME/scripts/bashFunctions.sh \\
+  \\
+  " ~/.zshrc
+
+##
+
+
 
 ## Alias
+
+  # Alias using sshpass
+  for myAlias in "${MYsshpassALIAS[@]}"
+  do
+    IFS=';' read -ra AL <<< "$myAlias"
+    echo "alias ${AL[0]}=\"sshpass -f $directoryToSave/${AL[1]} ${AL[2]}\"" >> ~/.zshrc
+  done
+
+  # Other alias
+  # Open with typora
+  echo "alias typ=\"open -a 'Typora'\""
+
+
+  # VPN
+  # start and close VPN connection
+  DIRECT=`echo $directoryToSave/${MYPASSWORDS[1]} | sed 's/;.*//'`
+  echo "alias openVPN=\"sudo openconnect -b -q $VPNSERVER -u $VPNUSER --passwd-on-stdin < $directoryToSave/$DIRECT\"" >> ~/.zshrc
+  echo "alias closeVPN=\"sudo kill ${ps aux | grep openconnect | grep -v grep | awk '{print $2}'}\"" >> ~/.zshrc
 
 
 ##

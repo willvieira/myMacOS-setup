@@ -32,6 +32,13 @@ GITHUB_REPOS=("willvieira/forest-IPM"
 GITLAB_REPOS=("thesis_dev/thesis_will")
 
 
-# If you want to save your passwords to be passed sshpass, define it here
-serverCanPASS=""
-serverLabPASS=""
+# If you want to save your passwords to be passed through `sshpass`, define it here
+# Structure follows: `MYPASSWORDS=("DESCRIPTION1;PASSWORD1" "DESCRIPTION2;PASSWORD2" "...")`
+directoryToSave="$HOME/bin/pass"
+MYPASSWORDS=("")
+
+# Alias using sshpass (PASS_DESCRIPTION mush be the same as DESCRIPTION above)
+# Structure follows: `MYsshpassALIAS=("Alias1;PASS_DESCRIPTION;COMMAND")`
+# Example:  MYsshpassALIAS=("sendFile;Documents;ssh user@server.com")` will
+# result in `alias sendFile="sshpass -f Documents ssh user@server.com"`
+MYsshpassALIAS=("")
