@@ -48,7 +48,7 @@ mkdir verif
 
   # R packages
   Rscript -e "# get all packages;
-  allPackages = installed.packages(.Library)[, 1];
+  allPackages = installed.packages()[, 1];
   # which are github?
   isGithub = sapply(allPackages, function(x) {!is.null(packageDescription(x)['GithubRepo'][[1]])});
   # get userName and package Name together
