@@ -236,13 +236,18 @@ source .personal_info
   # Application
   brew cask install iterm2
 
-  # Oh My Zsh #TODO
+  # install Oh My Zsh
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-  # ~/.zshrc ZSH_THEME="agnoster" # define theme
+
+  # change oh my zsh theme
+  sed -i "" "s/.*ZSH_THEME=\"robbyrussell\".*/ZSH_THEME=\"agnoster\"/" .test
+
+  # Add autosuggestions and highlighting plugins
+  # clone repos
   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions # autosuggestions
-  # ~/.zshrc plugins=(zsh-autosuggestions)
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting # syntax-highlighting
-  # plugins=( [plugins...] zsh-syntax-highlighting)
+  # add to .zshrc
+  sed -i "" "s/.*plugins=(git).*/plugins=(git zsh-autosuggestions zsh-syntax-highlighting)/" ~/.zshrc
 
   # install Source Code Pro font
   git clone https://github.com/powerline/fonts.git --depth=1
@@ -253,6 +258,20 @@ source .personal_info
   cd ..
   rm -rf fonts
 
+  # Hide computer and user name on terminal
+  sed -i "" "75i\\
+  [[ -n \"\$SSH_CLIENT\" ]] || export DEFAULT_USER=\"$USERNAME\" \\
+  \\
+  " ~/.zshrc
+
+  # Remove last login message when opening terminal
+  touch ~/.hushlogin
+
+  # Add welcome msg
+  sed -i "" "77i\\
+  echo \"$MSG\" \\
+  \\
+  " ~/.zshrc
 ##
 
 

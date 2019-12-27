@@ -2,17 +2,25 @@
 
 FIRSTNAME="Willian"
 LASTNAME="Vieira"
+USERNAME=`id -un`
+
+
 # Git
 EMAIL="willian.vieira@usherbrooke.ca"
 GITHUB="willvieira"
 GITLAB="depot.ielab.usherbrooke.ca"
+
+
 # VPN
 VPNUSER="view2301"
 VPNSERVER="rpv.usherbrooke.ca"
 
 
-## github repos to download
-# follow the Username/repoName
+# Welcome message when opening terminal
+MSG="Wake up, Will..."
+
+
+## github repos to download (follow the Username/repoName)
 GITHUB_REPOS=("willvieira/forest-IPM"
               "willvieira/ms_STM-managed"
               "willvieira/STManaged"
