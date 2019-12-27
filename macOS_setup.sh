@@ -180,9 +180,9 @@ source .personal_info
 
   brew install pandoc
   brew install pandoc-citeproc
-  pip install pandoc-fignos
-  pip install pandoc-tablenos
-  pip install pandoc-eqnos
+  pip3 install pandoc-fignos
+  pip3 install pandoc-tablenos
+  pip3 install pandoc-eqnos
 
 ##
 
@@ -250,7 +250,7 @@ source .personal_info
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
   # change oh my zsh theme
-  sed -i "" "s/.*ZSH_THEME=\"robbyrussell\".*/ZSH_THEME=\"agnoster\"/" .test
+  sed -i "" "s/.*ZSH_THEME=\"robbyrussell\".*/ZSH_THEME=\"agnoster\"/" ~/.zshrc
 
   # Add autosuggestions and highlighting plugins
   # clone repos
