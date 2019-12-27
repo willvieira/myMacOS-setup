@@ -23,7 +23,9 @@ sudo -v # ask for sudo upfront
 
 
 
-## Grant access to terminal write
+## gitlab ssh keygen
 
+  ssh-keygen -t rsa -b 4096 -C \"$EMAIL\"
+  cat ~/.ssh/id_rsa.pub > ~/Desktop/gitlab_key.txt
 
 ##

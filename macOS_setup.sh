@@ -198,8 +198,6 @@ source .personal_info
   git config --global user.email \"$EMAIL\"
   git config --global github.user \"$GITHUB\"
   git config --global credential.helper osxkeychain  # save my credentials
-  ssh-keygen -t rsa -b 4096 -C \"$EMAIL\"
-  cat ~/.ssh/id_rsa.pub > ~/Desktop/gitlab_key.txt
 
 
   # Download github and gitlab repos
