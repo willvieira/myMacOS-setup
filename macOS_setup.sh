@@ -272,6 +272,10 @@ source .personal_info
   echo \"$MSG\" \\
   \\
   " ~/.zshrc
+
+  # add color theme (edit of solarized theme)
+  open -a 'iTerm' packages/myColorTheme.itermcolors
+
 ##
 
 
