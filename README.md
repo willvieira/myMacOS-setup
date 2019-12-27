@@ -16,18 +16,18 @@ make
 
 ## What it does?
 
+It first installs all applications below (using `first_install.sh` and `macOS_setup.sh`), and then `verify.sh` if some failed.
+
 Install:
 - Xcode
 - homebrew
 - adobe acrobat reader
-- google chrome
 - brave
 - graphic magick
 - image magick
 - ffmpeg
 - hugo
 - node
-- transmission
 - vlc
 - youtube-dl
 - wget
@@ -50,6 +50,8 @@ Install:
 - inkscape
 - atom and some packages
 - R and a lot of packages
+- udunits
+- gdal
 - python3
 - pandoc filters
 - git, github and gitlab repos
@@ -57,5 +59,4 @@ Install:
 - wine
 - iterm2
 - activityWatch
-- caato time tracker
 - VPN openconnect
