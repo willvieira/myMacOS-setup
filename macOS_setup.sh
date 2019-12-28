@@ -98,6 +98,15 @@ source .personal_info
 
 
 
+## Libraries
+
+  brew install udunits
+  brew install gdal
+
+##
+
+
+
 ##------------- R, Pacakges & Profile
 
   # Application
@@ -153,16 +162,6 @@ source .personal_info
   ### DEFAULT WORKING DIRECTORY -------------------
 
   # setwd("~/Desktop")' > ~/.Rprofile
-
-##
-
-
-
-## Libraries
-
-  brew install udunits
-  brew install gdal
-  brew install gdal2 --with-armadillo --with-complete --with-libkml --with-unsupported
 
 ##
 
