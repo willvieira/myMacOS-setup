@@ -382,13 +382,6 @@ mammPull() {
 }
   " >> $HOME/scripts/bashFunctions.sh
 
-  # close VPN
-  echo "
-closeVPN() {
-  sudo kill \$(ps aux | grep openconnect | grep -v grep | awk '{print \$2}')
-}
-  " >> $HOME/scripts/bashFunctions.sh
-
   # Export functions
   sed -i "" "79i\\
   source $HOME/scripts/bashFunctions.sh \\
@@ -410,15 +403,14 @@ closeVPN() {
 
   # Other alias
   # Open with typora
-  echo "alias typ=\"open -a 'Typora'\""
+  echo "alias typ=\"open -a 'Typora'\"" >> ~/.zshrc
 
 
   # VPN
   # start and close VPN connection
   DIRECT=`echo $directoryToSave/${MYPASSWORDS[1]} | sed 's/;.*//'`
-  echo "alias openVPN=\"sudo openconnect -b -q $VPNSERVER -u $VPNUSER --passwd-on-stdin < $directoryToSave/$DIRECT\"" >> ~/.zshrc
-  echo "alias closeVPN=\"sudo kill ${ps aux | grep openconnect | grep -v grep | awk '{print $2}'}\"" >> ~/.zshrc
-
+  echo "alias openVPN=\"sudo openconnect -b -q $VPNSERVER -u $VPNUSER --passwd-on-stdin < $DIRECT\"" >> ~/.zshrc
+  echo "alias closeVPN=\"sudo kill \$(ps aux | grep openconnect | grep -v grep | awk '{print \$2}')\"" >> ~/.zshrc
 
 ##
 
