@@ -296,7 +296,7 @@ source .personal_info
 
   # bash script to open activity watch
   mkdir ~/scripts
-  echo "#\!/bin/sh\n\ncd /Applications/activitywatch\n./aw-qt" > ~/scripts/launchActivitywatch.sh
+  echo "#!/bin/sh\n\ncd /Applications/activitywatch\n./aw-qt" > ~/scripts/launchActivitywatch.sh
 
   # launchctl daemon to launch activitywatch with system login
   echo "<?xml version='1.0' encoding='UTF-8'?>
