@@ -8,6 +8,7 @@ file-icons
 highlight-selected
 indent-guide-improved
 intentions
+language-applescript
 language-julia
 language-latex
 language-markdown
