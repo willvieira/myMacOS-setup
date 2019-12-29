@@ -34,7 +34,6 @@ source .personal_info
   brew cask install basictex # tlmgr to install further packages
   brew cask install spectacle
   brew install octave
-  brew cask install mtmr
 
 ##
 
@@ -282,6 +281,23 @@ source .personal_info
 
   # add color theme (edit of solarized theme)
   open -a 'iTerm' packages/myColorTheme.itermcolors
+
+##
+
+
+
+## My TouchBar My rules
+
+  brew cask install mtmr
+
+  # add my personal configuration
+  cp packages/MyTouchBarMyRules.json $HOME/Library/Application Support/MTMR/items.json
+
+  # Script to automate open iTerm and Atom in splitView
+  cp scripts/splitView.scpt $HOME/scripts/splitView_script.scpt
+
+  # add icons to run apple script
+  cp images/icon_code.png $HOME/icons/code.png
 
 ##
 
