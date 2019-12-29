@@ -408,8 +408,8 @@ mammPull() {
   # VPN
   # start and close VPN connection
   DIRECT=`echo $directoryToSave/${MYPASSWORDS[1]} | sed 's/;.*//'`
-  echo "alias openVPN=\"sudo openconnect -b -q $VPNSERVER -u $VPNUSER --passwd-on-stdin < $DIRECT\"" >> ~/.zshrc
-  echo "alias closeVPN=\"sudo kill \$(ps aux | grep openconnect | grep -v grep | awk '{print \$2}')\"" >> ~/.zshrc
+  echo "alias startVPN=\"sudo openconnect -b -q $VPNSERVER -u $VPNUSER --passwd-on-stdin < $DIRECT\"" >> ~/.zshrc
+  echo "alias stopVPN=\"sudo kill \\\$(ps aux | grep openconnect | grep -v grep | awk '{print \\\$2}')\"" >> ~/.zshrc
 
 ##
 
