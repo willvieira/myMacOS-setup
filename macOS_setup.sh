@@ -5,6 +5,16 @@ source .personal_info
 
 
 
+## Create my repos
+
+  mkdir ~/scripts
+  mkdir ~/icons
+  mkdir ~/bin
+
+##
+
+
+
 ##------------- Refresh repositories
 
   brew update
@@ -120,47 +130,7 @@ source .personal_info
   "
 
   # Profile
-  echo 'options(warnPartialMatchArgs = TRUE, warnPartialMatchDollar = TRUE, warnPartialMatchAttr = TRUE)
-
-  ### GENERAL OPTIONS -----------------------------
-
-  options(
-    prompt          = "> ",
-    continue        = "+ ",
-    width           = 80,
-    scipen          = 100,
-    warn            = 0,
-    editor          = "Atom",
-    stringsAsFactor = TRUE,
-    tab.width       = 2
-  )
-
-  ### GRAPHICAL DEVICE DIMENSIONS -----------------
-
-  grDevices::quartz.options(
-    width  = 6,
-    height = 5
-  )
-
-  ### CRAN MIRROR ---------------------------------
-
-  local({
-    r <- getOption("repos")
-    r["CRAN"] <- "http://cran.rstudio.com/"
-    options(repos = r)
-  })
-
-  ### QUIT R WITHOUT SAVING -----------------------
-
-  .env <- new.env()
-  .env$q <- function(save = "no", ...) {
-    quit(save = save, ...)
-  }
-  attach(.env, warn.conflicts = FALSE)
-
-  ### DEFAULT WORKING DIRECTORY -------------------
-
-  # setwd("~/Desktop")' > ~/.Rprofile
+  cp scripts/.Rprofile ~/.Rprofile
 
 ##
 
@@ -311,7 +281,6 @@ source .personal_info
   rm activitywatch-v0.8.4-macos-x86_64.zip
 
   # bash script to open activity watch
-  mkdir ~/scripts
   echo "#!/bin/sh\n\ncd /Applications/activitywatch\n./aw-qt" > ~/scripts/launchActivitywatch.sh
 
   # launchctl daemon to launch activitywatch with system login
