@@ -49,6 +49,19 @@ source .personal_info
 
 
 
+## Latex packages
+
+  sudo tlmgr update --self
+  sudo tlmgr install easyreview
+  sudo tlmgr install soul
+  sudo tlmgr install todonotes
+  sudo tlmgr install pgf
+  sudo tlmgr install letltxmacro
+
+##
+
+
+
 ##------------- Communications app
 
   brew cask install skype
@@ -60,7 +73,7 @@ source .personal_info
 
 ##------------- Reference manager
 
-  mendeley mendeley-desktop
+  brew cask install mendeley-desktop
 
 ##
 
