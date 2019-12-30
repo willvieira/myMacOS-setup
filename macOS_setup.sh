@@ -276,8 +276,8 @@ source .personal_info
   # add my personal configuration
   cp packages/MyTouchBarMyRules.json $HOME/Library/Application Support/MTMR/items.json
 
-  # Script to automate open iTerm and Atom in splitView
-  cp scripts/splitView.scpt $HOME/scripts/splitView_script.scpt
+  # Compile script to automate open iTerm and Atom in splitView
+  osacompile -o $HOME/scripts/splitView_script.scpt scripts/splitView.applescript
 
   # add icons to run apple script
   cp images/icon_code.png $HOME/icons/code.png
