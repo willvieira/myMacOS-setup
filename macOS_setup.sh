@@ -196,7 +196,7 @@ source .personal_info
   cd GitLab
   for REPO in "${GITLAB_REPOS[@]}"
   do
-    echo git clone git@$GITLAB:$REPO.git
+    git clone git@$GITLAB:$REPO.git
   done
   cd ..
 ##
