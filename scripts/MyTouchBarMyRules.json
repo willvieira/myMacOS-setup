@@ -1,4 +1,9 @@
 [
+  // Screen brightness
+  { "type": "brightnessDown", "width": 32, "bordered": false, "align": "left" },
+  { "type": "brightnessUp", "width": 32, "bordered": false, "align": "left" },
+
+  // Do not disturb
   {
     "type": "dnd",
     "align": "left",
@@ -16,10 +21,6 @@
   "align": "left",
   "width": 38
   },
-
-  // Screen brightness
-  { "type": "brightnessDown", "width": 32, "bordered": false, "align": "left" },
-  { "type": "brightnessUp", "width": 32, "bordered": false, "align": "left" },
 
   // Music
   {
