@@ -23,79 +23,81 @@ copy "Another folder..." to end of myList
 
 set repoName to choose from list myList with prompt "Where are you going to work today?"
 
-(* if none is satisfied, tell the user to write it down *)
-if (repoName) = {"Another folder..."} then
-	set repoName to the text returned of (display dialog "Where are you going to work today?" default answer "")
-end if
+if (repoName) is not false then
+	(* if none is satisfied, tell the user to write it down *)
+	if (repoName) = {"Another folder..."} then
+		set repoName to the text returned of (display dialog "Where are you going to work today?" default answer "")
+	end if
 
 
-(* open iTerm, move to directory and open atom there *)
-tell application "iTerm" to activate
-delay 0.5
-tell application "System Events"
-	keystroke "cd " & (repoName) & "; atom . --clear-window-state"
-	delay 0.1
-	tell application "System Events" to key code 36 #return
-end tell
+	(* open iTerm, move to directory and open atom there *)
+	tell application "iTerm" to activate
+	delay 0.5
+	tell application "System Events"
+		keystroke "cd " & (repoName) & "; atom . --clear-window-state"
+		delay 0.1
+		tell application "System Events" to key code 36 #return
+	end tell
 
-delay 2.3
+	delay 2.3
 
-tell application "System Events"
-	set userName to name of current user
-end tell
-
-
-(* Next line must be edited with username and computer name *)
-set selectedWindow1 to (userName) & "@" & (computerName) & ": ~/" & (repoName)
-set selectedWindow2 to "untitled — ~/" & (repoName)
+	tell application "System Events"
+		set userName to name of current user
+	end tell
 
 
-tell application "Mission Control"
-	launch
-end tell
+	(* Next line must be edited with username and computer name *)
+	set selectedWindow1 to (userName) & "@" & (computerName) & ": ~/" & (repoName)
+	set selectedWindow2 to "untitled — ~/" & (repoName)
 
-(*
-The dock has a set of nested UI elements for Mission Control, with the following structure:
-    "Mission Control"'s group 1 (the base container)
-        group 1, group 2, .... (groups for each desktop)
-            buttons for open windows on each desktop
-        group "Spaces Bar"
-            a single button (the '+' buttan to add a new space)
-            a list
-                buttons for the desktops and any already-made spaces
-*)
 
-tell application "System Events"
-	tell process "Dock"'s group "Mission Control"'s group 1
-		tell group "Spaces Bar"'s list 1
-			set {p, s} to {position, size} of last UI element
-			set XTarget to (item 1 of p) + (item 1 of s) + 100
-			set YTarget to (item 2 of p) + (item 2 of s) + 100
-		end tell
-		tell group 1
-			set viewButton1 to button selectedWindow1
-			set {x, y} to get viewButton1's position
-			my mouseDrag(x, y, XTarget, YTarget, 0.5)
-		end tell
-		tell group "Spaces Bar"'s list 1
-			set {p, s} to {position, size} of last UI element
-			set XTarget to (item 1 of p) + (item 1 of s) + 10
-			set YTarget to (item 2 of p) + (item 2 of s) + 10
-		end tell
-		try
+	tell application "Mission Control"
+		launch
+	end tell
+
+	(*
+	The dock has a set of nested UI elements for Mission Control, with the following structure:
+	    "Mission Control"'s group 1 (the base container)
+	        group 1, group 2, .... (groups for each desktop)
+	            buttons for open windows on each desktop
+	        group "Spaces Bar"
+	            a single button (the '+' buttan to add a new space)
+	            a list
+	                buttons for the desktops and any already-made spaces
+	*)
+
+	tell application "System Events"
+		tell process "Dock"'s group "Mission Control"'s group 1
+			tell group "Spaces Bar"'s list 1
+				set {p, s} to {position, size} of last UI element
+				set XTarget to (item 1 of p) + (item 1 of s) + 100
+				set YTarget to (item 2 of p) + (item 2 of s) + 100
+			end tell
 			tell group 1
-				set viewButton2 to button selectedWindow2
-				set {x, y} to get viewButton2's position
+				set viewButton1 to button selectedWindow1
+				set {x, y} to get viewButton1's position
 				my mouseDrag(x, y, XTarget, YTarget, 0.5)
 			end tell
-		end try
-		tell group "Spaces Bar"'s list 1
-			delay 0.5
-			set lastUI to last UI element
-			click lastUI
+			tell group "Spaces Bar"'s list 1
+				set {p, s} to {position, size} of last UI element
+				set XTarget to (item 1 of p) + (item 1 of s) + 10
+				set YTarget to (item 2 of p) + (item 2 of s) + 10
+			end tell
+			try
+				tell group 1
+					set viewButton2 to button selectedWindow2
+					set {x, y} to get viewButton2's position
+					my mouseDrag(x, y, XTarget, YTarget, 0.5)
+				end tell
+			end try
+			tell group "Spaces Bar"'s list 1
+				delay 0.5
+				set lastUI to last UI element
+				click lastUI
+			end tell
 		end tell
 	end tell
-end tell
+end if
 on mouseDrag(xDown, yDown, xUp, yUp, delayTime)
 	do shell script "
 
