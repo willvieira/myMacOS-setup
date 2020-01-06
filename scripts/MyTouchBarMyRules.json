@@ -12,7 +12,7 @@
 
   //Dark mode
   { "type": "darkMode",
-    "align": "left"
+    "align": "left",
   },
 
   // Nigth shift
@@ -20,6 +20,20 @@
   "type": "nightShift",
   "align": "left",
   "width": 38
+  },
+
+  // Keyboard backlight
+  {
+  "type": "illuminationDown",
+  "align": "left",
+  "width": 32,
+  "bordered": false
+  },
+  {
+  "type": "illuminationUp",
+  "align": "left",
+  "width": 32,
+  "bordered": false
   },
 
   // Music
@@ -70,7 +84,7 @@
 
   // Coffee
   { "type": "displaySleep",
-    "width": 40,
+    "width": 35,
     "align": "right",
     "bordered": false
   },
@@ -78,6 +92,7 @@
   // Weather
   {
     "type": "weather",
+    "width": 65,
     "align": "right",
     "icon_type": "images",
     "api_key": "ca93a0bb8cdb428552660d83249e4bc9",
