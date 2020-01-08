@@ -170,6 +170,18 @@ source .personal_info
   \\
   " ~/.zshrc
 
+##
+
+
+
+##------------- R, Pacakges & Profile
+
+  # Application
+  brew install R
+
+  # define main language
+  defaults write org.R-project.R force.LANG en_US.UTF-8
+
   # data.table specific instalation
   mkdir ~/.R
   echo "CC=/usr/local/opt/llvm/bin/clang -fopenmp
@@ -189,18 +201,6 @@ CFLAGS=-g -O3 -Wall -pedantic -std=gnu99 -mtune=native -pipe
 CXXFLAGS=-g -O3 -Wall -pedantic -std=c++11 -mtune=native -pipe
 LDFLAGS=-L/usr/local/opt/gettext/lib -L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib
 CPPFLAGS=-I/usr/local/opt/gettext/include -I/usr/local/opt/llvm/include" >> ~/.R/Makevars
-
-##
-
-
-
-##------------- R, Pacakges & Profile
-
-  # Application
-  brew install R
-
-  # define main language
-  defaults write org.R-project.R force.LANG en_US.UTF-8
 
   # CRAN packages
   Rscript -e "
