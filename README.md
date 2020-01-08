@@ -60,3 +60,4 @@ Install:
 - iterm2
 - activityWatch
 - VPN openconnect
+- libraries (gcc, java, freetype, fontconfig, pixman, gettext, libxml2, cairo, libsvg, librsvg, openblas, eigen, armadillo, llvm, phantomjs, casperjs)

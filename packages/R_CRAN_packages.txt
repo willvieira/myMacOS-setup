@@ -76,7 +76,6 @@
 "crypto"
 "curl"
 "cyclocomp"
-"data.table"
 "datasets"
 "DBI"
 "dbplyr"

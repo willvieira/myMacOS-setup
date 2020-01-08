@@ -124,6 +124,71 @@ source .personal_info
 
   brew install udunits
   brew install gdal
+  brew install gcc ccache cmake pkg-config autoconf automake
+  brew install freetype fontconfig pixman gettext
+  brew install libxml2
+  brew cask install java
+  brew install cairo libsvg librsvg
+  brew install openblas
+  brew install eigen armadillo
+  brew install llvm
+  brew install phantomjs casperjs
+
+
+  ## Extra config
+
+  # Setting language and localization variables
+  sed -i "" "83i\\
+  # Setting language and localization variables \\
+  export LC_ALL=en_US.UTF-8 \\
+  export LANG=en_US.UTF-8 \\
+  \\
+  " ~/.zshrc
+
+  # link libxml2
+  sed -i "" "87i\\
+  # link libxml2 \\
+  export PATH="/usr/local/opt/libxml2/bin:\$PATH" \\
+  \\
+  " ~/.zshrc
+  export LDFLAGS="-L/usr/local/opt/libxml2/lib"
+  export CPPFLAGS="-I/usr/local/opt/libxml2/include"
+  export PKG_CONFIG_PATH="/usr/local/opt/libxml2/lib/pkgconfig"
+
+  # Java
+  sed -i "" "90i\\
+  # Setting \$JAVA_HOME \\
+  export JAVA_HOME=\"\$(/usr/libexec/java_home)\" \\
+  \\
+  " ~/.zshrc
+  sudo R CMD javareconf
+
+  # Link llvm
+  sed -i "" "93i\\
+  # Link llvm \\
+  export PATH=/usr/local/opt/llvm/bin:\$PATH \\
+  \\
+  " ~/.zshrc
+
+  # data.table specific instalation
+  mkdir ~/.R
+  echo "CC=/usr/local/opt/llvm/bin/clang -fopenmp
+CXX=/usr/local/opt/llvm/bin/clang++ -fopenmp
+# -O3 should be faster than -O2 (default) level optimisation ..
+CFLAGS=-g -O3 -Wall -pedantic -std=gnu99 -mtune=native -pipe
+CXXFLAGS=-g -O3 -Wall -pedantic -std=c++11 -mtune=native -pipe
+LDFLAGS=-L/usr/local/opt/gettext/lib -L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib
+CPPFLAGS=-I/usr/local/opt/gettext/include -I/usr/local/opt/llvm/include
+CPPFLAGS=-I/usr/local/opt/gettext/include -I \$(LLVM_LOC)/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include" >> ~/.R/Makevars
+  R -e "install.packages('data.table', repos='http://cran.us.r-project.org')"
+  rm ~/.R/Makevars
+  echo "CC=/usr/local/opt/llvm/bin/clang
+CXX=/usr/local/opt/llvm/bin/clang++
+# -O3 should be faster than -O2 (default) level optimisation ..
+CFLAGS=-g -O3 -Wall -pedantic -std=gnu99 -mtune=native -pipe
+CXXFLAGS=-g -O3 -Wall -pedantic -std=c++11 -mtune=native -pipe
+LDFLAGS=-L/usr/local/opt/gettext/lib -L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib
+CPPFLAGS=-I/usr/local/opt/gettext/include -I/usr/local/opt/llvm/include" >> ~/.R/Makevars
 
 ##
 
@@ -133,6 +198,9 @@ source .personal_info
 
   # Application
   brew install R
+
+  # define main language
+  defaults write org.R-project.R force.LANG en_US.UTF-8
 
   # CRAN packages
   Rscript -e "
