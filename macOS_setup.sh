@@ -44,6 +44,7 @@ source .personal_info
   brew cask install basictex # tlmgr to install further packages
   brew cask install spectacle
   brew install octave
+  brew install htop
 
 ##
 
@@ -57,6 +58,7 @@ source .personal_info
   sudo tlmgr install todonotes
   sudo tlmgr install pgf
   sudo tlmgr install letltxmacro
+  sudo tlmgr install framed
 
 ##
 

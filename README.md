@@ -40,6 +40,7 @@ Install:
 - LaTeX
 - spectacle
 - octave
+- htop
 - my TouchBar My rules
 - skype
 - rambox
