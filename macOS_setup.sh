@@ -45,6 +45,7 @@ source .personal_info
   brew cask install spectacle
   brew install octave
   brew install htop
+  brew install lftp
 
 ##
 

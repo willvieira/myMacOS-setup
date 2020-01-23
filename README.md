@@ -44,6 +44,7 @@ Install:
 - my TouchBar My rules
 - skype
 - rambox
+- lftp
 - mendeley
 - dropbox
 - owncloud
