@@ -439,6 +439,10 @@ CPPFLAGS=-I/usr/local/opt/gettext/include -I/usr/local/opt/llvm/include" >> ~/.R
   # push files to server
   echo "
 mammPush() {
+  sshpass -f $DIRECT scp $HOME/GitHub/\$1 view2301@mp2b.computecanada.ca:/home/view2301/\$2
+}
+
+mammPushr() {
   sshpass -f $DIRECT scp -r $HOME/GitHub/\$1 view2301@mp2b.computecanada.ca:/home/view2301/\$2
 }
   " >> $HOME/scripts/bashFunctions.sh
@@ -446,6 +450,10 @@ mammPush() {
   # pull files from server
   echo "
 mammPull() {
+  sshpass -f $DIRECT scp view2301@mp2b.computecanada.ca:/home/view2301/\$2 $HOME/GitHub/\$2
+}
+
+mammPullr() {
   sshpass -f $DIRECT scp -r view2301@mp2b.computecanada.ca:/home/view2301/\$2 $HOME/GitHub/\$2
 }
   " >> $HOME/scripts/bashFunctions.sh
