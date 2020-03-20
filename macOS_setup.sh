@@ -171,6 +171,9 @@ source .personal_info
   # Application
   brew install R
 
+  # radian
+  pip install radian
+
   # define main language
   defaults write org.R-project.R force.LANG en_US.UTF-8
 
@@ -469,6 +472,7 @@ mammPullr() {
   # Other alias
   # Open with typora
   echo "alias typ=\"open -a 'Typora'\"" >> ~/.zshrc
+  echo "alias r=\"radian\"" >> ~/.zshrc
 
 
   # VPN
