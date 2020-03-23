@@ -32,7 +32,7 @@ if (repoName) is not false then
 	
 	(* open VScode in specific `repoName` *)
 	do shell script "/usr/local/bin/code " & "/Users/wvieira/" & (repoName)
-	delay 0.2
+	delay 0.6
 	(* set CScode to full screen mode by `command +F` *)
 	tell application "Visual Studio Code" to activate
 	tell application "System Events"
