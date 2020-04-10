@@ -45,6 +45,7 @@ Install:
 - skype
 - rambox
 - lftp
+- postgresql
 - mendeley
 - dropbox
 - owncloud
