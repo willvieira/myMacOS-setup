@@ -46,6 +46,7 @@ source .personal_info
   brew install octave
   brew install htop
   brew install lftp
+  brew install watch
 
 ##
 

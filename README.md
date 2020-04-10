@@ -50,6 +50,7 @@ Install:
 - owncloud
 - xquartz
 - inkscape
+- watch
 - atom and some packages
 - R and a lot of packages
 - udunits
