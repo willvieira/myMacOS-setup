@@ -476,6 +476,7 @@ mammPullr() {
   # Open with typora
   echo "alias typ=\"open -a 'Typora'\"" >> ~/.zshrc
   echo "alias r=\"radian\"" >> ~/.zshrc
+  echo "alias tdu=\"tree --du -h\"" >> ~/.zshrc
 
 
   # VPN
