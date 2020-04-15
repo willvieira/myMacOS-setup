@@ -41,6 +41,7 @@ Install:
 - spectacle
 - octave
 - htop
+- tree
 - my TouchBar My rules
 - skype
 - rambox

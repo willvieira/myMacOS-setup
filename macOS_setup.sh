@@ -48,6 +48,7 @@ source .personal_info
   brew install lftp
   brew install watch
   brew install postgresql
+  brew install tree
 
 ##
 
