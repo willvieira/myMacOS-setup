@@ -1,5 +1,5 @@
 # myMacOS-setup
-
+ 
 Series of scripts to automate the setup of my new laptop.
 
 These are mainly inspired from this inSileco blog [post](https://insileco.github.io/2018/07/13/my-macos-setup/) and this [guide](https://sourabhbajaj.com/mac-setup/). Thank you all for the incredible work! 💚
